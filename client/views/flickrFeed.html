@@ -1,0 +1,12 @@
+<div ng-controller="FlickrFeedController">
+    <div class="container">
+        <h1 class="text-center">Flier Feed Image</h1>
+        
+        <a href="https://twittstrap.com/angular-bootstrap-lightbox/">angular lightbox</a>
+        <div ng-repeat="park in parks">
+            <div class="col-md-3" style="margin:5px 0">
+                <img ng-src="{{park.image}}" style="width:100px; height:100px; border-radius:10px;">
+            </div>
+        </div>
+    </div>
+</div>

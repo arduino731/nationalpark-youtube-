@@ -1,0 +1,19 @@
+<div ng-controller="ViewButtonController" class="container">
+    <div style="margin: 0 0 15px 0">
+		<a href="#/portfolio" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Go Back</a>
+	</div>
+	
+	<div class="lightbox">
+    	<img ng-src="{{park.image}}" class="poster">
+        	<h1 style="text-decoration: underline;">{{park.name}}, {{park.state}}</h1>
+        	<p><strong>Established in {{park.created}}</strong></p>
+            <p>Coordinates: {{park.gps}}</p>
+            <p>{{park.arces}}</p>
+            <p class="facts">{{park.facts}}</p>
+        
+            <a href="https://www.youtube.com/watch?v={{ park.youtube }}" target="_blank"><img src="img/assets/youtube.png"  class="infoLink" style="width: 22px;">Youtube</a>
+            <a href="http://www.google.com/maps/?q={{ park.gps }}" target="_blank"><img src="img/assets/googleMaps.png"  class="infoLink" style="width: 22px;">Maps</a>
+            <a href="http://www.wikipedia.com/wiki/{{ park.id }}" target="_blank"><img src="img/assets/wiki.png" class="infoLink" style="width: 22px;">Wikipedia</a>
+            
+    </div>
+</div>
