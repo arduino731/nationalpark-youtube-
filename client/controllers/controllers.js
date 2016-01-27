@@ -13,6 +13,24 @@ angular
     
     .controller('IndexController', ['$scope', '$http','$state', function($scope, $http, $state){ 
         $scope.$state = $state;
+        
+        $scope.myInterval = 5000;
+        $scope.noWrapSlides = false;
+        var slides = $scope.slides = [];
+        $scope.addSlide = function() {
+          var newWidth = slides.length + 1;
+          slides.push({
+            // image: '//placekitten.com/' + newWidth + '/300',
+            image: 'img/slide/' + newWidth + '.jpg',
+            text: ['Glacier National Park','Arches National Park','Yosemite National Park','Canyonlands National Park'][slides.length]
+          });
+        };
+        for (var i=0; i<4; i++) {
+          $scope.addSlide();
+        }
+        
+        
+        
         $http.get('https://nationalpark.firebaseio.com/parks.json').success(function(response){
             $scope.parks = response;
             // console.log(response);

@@ -1,10 +1,10 @@
 var app = angular.module("myApp", [
     'nationalPark.controllers',
     'ui.router',
-    'youtube-embed'
+    'youtube-embed',
     // 'Authentication',
     // 'ngCookies'
-    // 'ui.bootstrap'
+    'ui.bootstrap'
     
     ]);
     
