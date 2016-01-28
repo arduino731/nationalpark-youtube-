@@ -2,6 +2,13 @@ angular
     
     .module("nationalPark.controllers", [])
 
+    .config(function($sceDelegateProvider) {
+      $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        'https://www.youtube.com/**'
+      ]);
+    })
+    
     .controller('AppController', ['$scope', '$state','$http', function($scope, $state, $http){
         $scope.$state = $state;
         $http.get('https://nationalpark.firebaseio.com/parks.json').success(function(response){
@@ -57,6 +64,55 @@ angular
         })
         
         $scope.theBestVideo = 'sMKoNBRZM1M';
+        
+        // $http.get('https://nationalpark.firebaseio.com/parks.json').success(function(response){
+        //     $scope.videos = response;
+        //     console.log(response);
+        // })
+        
+        $scope.videos = {
+          name: 'some name',
+          description: 'some description',
+          media: [{
+                name:"some name",
+                description: 'some description',
+                src: 'v5Asedlj2cw',
+          },
+          {     name:"some name",
+                description: 'some description',
+                src: 'v5Asedlj2cw',
+          },
+          {
+                name:"some name",
+                description: 'some description',
+                src: 'v5Asedlj2cw',
+          },
+          {
+                name:"some name",
+                description: 'some description',
+                src: 'v5Asedlj2cw',
+          },
+          {
+                name:"some name",
+                description: 'some description',
+                src: 'v5Asedlj2cw',
+          },
+          {
+                name:"some name",
+                description: 'some description',
+                src: 'v5Asedlj2cw',
+          },
+          {
+                name:"some name",
+                description: 'some description',
+                src: 'v5Asedlj2cw',
+          }
+          ]
+        };
+        
+        $scope.getIframeSrc = function(src) {
+          return 'https://www.youtube.com/embed/' + src;
+        };
         
     }])
     

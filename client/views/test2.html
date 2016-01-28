@@ -7,3 +7,13 @@
 <div ng-repeat="park in parks">
    <p>{{park.name}}</p> 
 </div>
+ 
+  <!--<div class="col-md-4" ng-repeat="video in videos">-->
+    <div class="col-md-4" ng-repeat="video in videos.media">
+      <div class="text-center">
+          <h1>{{video.name}}</h1>
+          <!--<p>State: {{video.state}}</p>-->
+      </div>
+    <!--<iframe width="100%" height="300" ng-src="{{getIframeSrc(video.youtube)}}" frameborder="0" allowfullscreen></iframe>-->
+    <iframe width="100%" height="300" ng-src="{{getIframeSrc(video.src)}}" frameborder="0" allowfullscreen></iframe>
+  </div>
